@@ -21,7 +21,7 @@
             <!-- Input Section -->
             <section class="input-section">
                 <h2>どんな標識が欲しいですか？</h2>
-                <p class="hint">自然な言葉で伝えてください</p>
+                <p class="hint">自然な言葉で伝えてください（クイック例をクリック後も自由に編集できます）</p>
                 
                 <textarea 
                     id="userInput" 
@@ -31,20 +31,29 @@
                 ></textarea>
 
                 <button id="generateBtn" class="generate-btn">
-                    🎨 デザインを生成
+                    ⭐ GENERATE DESIGN
                 </button>
 
                 <!-- Quick Examples -->
                 <div class="examples">
                     <p class="examples-title">クイック例：</p>
-                    <button class="example-btn" data-example="ガレージ用の駐車禁止標識。ビンテージな感じで、ルート66みたいな雰囲気">
+                    <button class="example-btn" data-example="ガレージ用の駐車禁止標識。ビンテージな感じで、ルート66みたいな雰囲気にしたい">
                         🏍️ ビンテージガレージ
                     </button>
-                    <button class="example-btn" data-example="倉庫で使う安全標識。フォークリフトが走ってるから注意喚起したい。目立つやつで">
+                    <button class="example-btn" data-example="倉庫で使う安全標識。フォークリフトが走ってるから注意喚起したい。目立つやつがいい">
                         ⚠️ 倉庫の安全標識
                     </button>
-                    <button class="example-btn" data-example="うちの駐車場用。無断駐車されて困ってるから、ちゃんと怖い感じで。レッカー移動するって書いて">
-                        🚫 駐車場標識
+                    <button class="example-btn" data-example="うちの駐車場用。無断駐車されて困ってるから、怖い感じで。レッカー移動するって書いて">
+                        🚫 駐車禁止（レッカー）
+                    </button>
+                    <button class="example-btn" data-example="カフェ用のビンテージ標識。レトロなアメリカンダイナーみたいな雰囲気で">
+                        ☕ レトロカフェ
+                    </button>
+                    <button class="example-btn" data-example="私有地なので駐車禁止。でもレッカーじゃなくて、普通の注意書き程度で">
+                        🚗 私有地駐車禁止
+                    </button>
+                    <button class="example-btn" data-example="作業場の安全標識。警告っぽく目立つやつ。でもフォークリフトじゃなくて一般的な注意喚起で">
+                        ⚠️ 作業場注意
                     </button>
                 </div>
             </section>
@@ -52,7 +61,7 @@
             <!-- Loading -->
             <div id="loading" class="loading hidden">
                 <div class="spinner"></div>
-                <p>AIがアメリカンデザインを生成中...</p>
+                <p>⭐ GENERATING AMERICAN DESIGN... ⭐</p>
             </div>
 
             <!-- Result Section -->
@@ -62,7 +71,7 @@
                 <div class="result-grid">
                     <!-- Preview Card -->
                     <div class="preview-card">
-                        <h3>デザインプレビュー</h3>
+                        <h3>🎯 DESIGN PREVIEW</h3>
                         <div id="signPreview" class="sign-preview">
                             <!-- Generated sign will be displayed here -->
                         </div>
@@ -70,19 +79,19 @@
 
                     <!-- Specifications Card -->
                     <div class="specs-card">
-                        <h3>📋 デザイン仕様</h3>
+                        <h3>📋 SPECIFICATIONS</h3>
                         <div id="specs" class="specs-content">
                             <!-- Specifications will be displayed here -->
                         </div>
 
-                        <h3 class="mt-4">💡 AIの提案理由</h3>
+                        <h3 class="mt-4">💡 AI REASONING</h3>
                         <div id="reasoning" class="reasoning-content">
                             <!-- AI reasoning will be displayed here -->
                         </div>
 
                         <div class="action-buttons">
-                            <button class="btn btn-primary">これで注文</button>
-                            <button class="btn btn-secondary" id="regenerateBtn">🔄 再生成</button>
+                            <button class="btn btn-primary">✓ ORDER NOW</button>
+                            <button class="btn btn-secondary" id="regenerateBtn">🔄 TRY AGAIN</button>
                         </div>
                     </div>
                 </div>
