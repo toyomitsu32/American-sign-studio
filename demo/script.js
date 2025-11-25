@@ -2,7 +2,17 @@
 const designPresets = {
     'vintage_garage': {
         preview: {
-            text: '🏍️ ROUTE 66\n\nCLASSIC CAR GARAGE\n\nQuality Service\nSince 1952\n\n★ AMERICAN PRIDE ★',
+            html: `
+                <span class="emoji-large">🏍️</span>
+                <span class="title">ROUTE 66</span>
+                <span class="subtitle">CLASSIC CAR GARAGE</span>
+                <br>
+                <span class="body-text">Quality Service</span>
+                <span class="body-text">Since 1952</span>
+                <br>
+                <span class="stars">★ ★ ★</span>
+                <span class="body-text emphasis">AMERICAN PRIDE</span>
+            `,
             className: 'sign-vintage'
         },
         specs: {
@@ -18,7 +28,18 @@ const designPresets = {
     },
     'warehouse_safety': {
         preview: {
-            text: '⚠️ CAUTION\n\nFORKLIFT TRAFFIC\n\n🚜\n\nWATCH FOR\nMOVING EQUIPMENT\n\nSTAY ALERT',
+            html: `
+                <span class="title">⚠️ CAUTION</span>
+                <br>
+                <span class="subtitle">FORKLIFT TRAFFIC</span>
+                <br>
+                <span class="emoji-large">🚜</span>
+                <br>
+                <span class="body-text emphasis">WATCH FOR</span>
+                <span class="body-text emphasis">MOVING EQUIPMENT</span>
+                <br>
+                <span class="body-text">STAY ALERT</span>
+            `,
             className: 'sign-warning'
         },
         specs: {
@@ -34,7 +55,17 @@ const designPresets = {
     },
     'parking_no': {
         preview: {
-            text: '🚫 NO PARKING\nPRIVATE PROPERTY\n\nUnauthorized vehicles\nwill be TOWED\nat owner\'s expense\n\nViolators will be\nprosecuted',
+            html: `
+                <span class="title">🚫 NO PARKING</span>
+                <span class="subtitle">PRIVATE PROPERTY</span>
+                <br>
+                <span class="body-text">Unauthorized vehicles</span>
+                <span class="body-text">will be <span class="emphasis">TOWED</span></span>
+                <span class="body-text">at owner's expense</span>
+                <br>
+                <span class="small-text">Violators will be</span>
+                <span class="small-text">prosecuted</span>
+            `,
             className: 'sign-parking'
         },
         specs: {
@@ -128,8 +159,8 @@ function generateDesign() {
 }
 
 function displayDesign(design) {
-    // Display preview
-    signPreview.innerHTML = design.preview.text.replace(/\n/g, '<br>');
+    // Display preview with sign-board wrapper
+    signPreview.innerHTML = `<div class="sign-board">${design.preview.html}</div>`;
     signPreview.className = 'sign-preview ' + design.preview.className;
 
     // Display specs
