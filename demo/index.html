@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>American Sign Studio - AI標識デザイン生成デモ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">🇺🇸 American Sign Studio</h1>
+            <p class="tagline">話すだけで、本場アメリカンスタイルの標識デザインが完成</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Input Section -->
+            <section class="input-section">
+                <h2>どんな標識が欲しいですか？</h2>
+                <p class="hint">自然な言葉で伝えてください</p>
+                
+                <textarea 
+                    id="userInput" 
+                    class="input-box" 
+                    placeholder="例：ガレージ用の駐車禁止標識が欲しい。ちょっとビンテージな感じで、ルート66みたいな雰囲気にしたい"
+                    rows="4"
+                ></textarea>
+
+                <button id="generateBtn" class="generate-btn">
+                    🎨 デザインを生成
+                </button>
+
+                <!-- Quick Examples -->
+                <div class="examples">
+                    <p class="examples-title">クイック例：</p>
+                    <button class="example-btn" data-example="ガレージ用の駐車禁止標識。ビンテージな感じで、ルート66みたいな雰囲気">
+                        🏍️ ビンテージガレージ
+                    </button>
+                    <button class="example-btn" data-example="倉庫で使う安全標識。フォークリフトが走ってるから注意喚起したい。目立つやつで">
+                        ⚠️ 倉庫の安全標識
+                    </button>
+                    <button class="example-btn" data-example="うちの駐車場用。無断駐車されて困ってるから、ちゃんと怖い感じで。レッカー移動するって書いて">
+                        🚫 駐車場標識
+                    </button>
+                </div>
+            </section>
+
+            <!-- Loading -->
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>AIがアメリカンデザインを生成中...</p>
+            </div>
+
+            <!-- Result Section -->
+            <section id="resultSection" class="result-section hidden">
+                <h2>✨ あなたの標識が完成しました！</h2>
+                
+                <div class="result-grid">
+                    <!-- Preview Card -->
+                    <div class="preview-card">
+                        <h3>デザインプレビュー</h3>
+                        <div id="signPreview" class="sign-preview">
+                            <!-- Generated sign will be displayed here -->
+                        </div>
+                    </div>
+
+                    <!-- Specifications Card -->
+                    <div class="specs-card">
+                        <h3>📋 デザイン仕様</h3>
+                        <div id="specs" class="specs-content">
+                            <!-- Specifications will be displayed here -->
+                        </div>
+
+                        <h3 class="mt-4">💡 AIの提案理由</h3>
+                        <div id="reasoning" class="reasoning-content">
+                            <!-- AI reasoning will be displayed here -->
+                        </div>
+
+                        <div class="action-buttons">
+                            <button class="btn btn-primary">これで注文</button>
+                            <button class="btn btn-secondary" id="regenerateBtn">🔄 再生成</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>American Sign Studio - デモサイト</p>
+            <p class="note">※ これはデモです。実際のAI生成は本番環境で動作します</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
